@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class CartResult extends React.Component {
     render() {
@@ -17,7 +17,7 @@ class CartResult extends React.Component {
                 </td>
                 <td colSpan="3">
                     <button type="button" className="btn btn-primary waves-effect waves-light">Complete purchase
-        <i className="fa fa-angle-right right"></i>
+                        <i className="fa fa-angle-right right"></i>
                     </button>
                 </td>
             </tr>

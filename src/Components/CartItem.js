@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class CartItem extends React.Component {
     render() {
         return (
             <tr>
                 <th scope="row">
-                    <img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/H/H0/HH0H2/HH0H2?wid=445&hei=445&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=K7ik72"
+                    <img src="https://dienthoaimoi.vn/images/news/2020/10/14/original/tiet-lo-moi-pin-iphone-12_1602643297.jpg"
                         alt="" className="img-fluid z-depth-0" />
                 </th>
                 <td>
@@ -17,12 +17,10 @@ class CartItem extends React.Component {
                 <td className="center-on-small-only">
                     <span className="qty">1 </span>
                     <div className="btn-group radio-group" data-toggle="buttons">
-                        <label className="btn btn-sm btn-primary
-                                                btn-rounded waves-effect waves-light">
+                        <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
                             <a>—</a>
                         </label>
-                        <label className="btn btn-sm btn-primary
-                                                btn-rounded waves-effect waves-light">
+                        <label className="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
                             <a>+</a>
                         </label>
                     </div>

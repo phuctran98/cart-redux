@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CartResult from './CartResult'
 import CartItem from './CartItem'
 
