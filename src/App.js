@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Components/Header'
-import Products from './Components/Products'
+import ProductsContainer from './container/ProductsContainer'
 import Message from './Components/Message'
 import Cart from './Components/Cart'
 import Footer from './Components/Footer'
@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <div className= "hidden-sn animated deep-purple-skin">
                 <Header></Header>
-                <Products></Products>
+                <ProductsContainer></ProductsContainer>
                 <Message></Message>
                 <Cart></Cart>
                 <Footer></Footer>

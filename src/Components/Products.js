@@ -1,33 +1,18 @@
 import React, { Component } from 'react';
-import Product from "./Product";
-import { connect } from "react-redux";
-
 class Products extends React.Component {
     render() {
-        var {products} = this.props
-        
         return (
             <section className="section">
                 <h1 className="section-heading">Danh Sách Sản Phẩm</h1>
                 <div className="row">
-                    {this.showProduct(products)}
+                    {this.props.children}
                 </div>
             </section>
         );
     }
-    showProduct(products){
-        var results = []
-        results = products.map((product,index) =>{
-            return <Product product={product} key={index}></Product>
-        })
-        return results
-    }
+
 }
 
-const mapStateToProps = (state) =>{
-    return{
-        products : state.products
-    }
-}
 
-export default connect(mapStateToProps,null)(Products) ;
+
+export default Products ;

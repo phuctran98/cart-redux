@@ -42,10 +42,10 @@ class Product extends React.Component {
     rating(rating){
         var results = []
         for(var i=1;i <= rating; i++){
-            results.push(<i className="fa fa-star"></i>)
+            results.push(<i key = {i}className="fa fa-star"></i>)
         }
-        for(var i=1;i <= 5-rating; i++){
-            results.push(<i className="fa fa-star-o"></i>)
+        for(var j=1;j <= 5-rating; j++){
+            results.push(<i key ={i+j} className="fa fa-star-o"></i>)
         }
         
         return results
