@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import products from '../reducers/product';
+import React from 'react';
+// import products from '../reducers/product';
 
 class Product extends React.Component {
     render() {
@@ -29,7 +29,14 @@ class Product extends React.Component {
                         <div className="card-footer">
                             <span className="left">{product.price}$</span>
                             <span className="right">
-                                <a className="btn-floating blue-gradient" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Cart">
+                                <a 
+                                    className="btn-floating blue-gradient" 
+                                    data-toggle="tooltip" 
+                                    data-placement="top" 
+                                    title="" 
+                                    data-original-title="Add to Cart"
+                                    onClick = {()=>this.addToCart(product)}
+                                    >
                                     <i className="fa fa-shopping-cart"></i>
                                 </a>
                             </span>
@@ -49,7 +56,9 @@ class Product extends React.Component {
         }
         
         return results
-        
+    }
+    addToCart = (product) => {
+        this.props.onAddToCart(product)
     }
 }
 

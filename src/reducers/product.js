@@ -1,3 +1,5 @@
+import * as types from '../constants/ActionType'
+
 var initState = [
     {
         id:0,
@@ -18,7 +20,7 @@ var initState = [
         rating : 4
     },
     {
-        id:0,
+        id:2,
         name:"IPHONE8",
         image :'https://dienthoaimoi.vn/images/news/2020/10/14/original/tiet-lo-moi-pin-iphone-12_1602643297.jpg',
         description: "new module",
