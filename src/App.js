@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Components/Header'
 import ProductsContainer from './container/ProductsContainer'
-import Message from './Components/Message'
 import CartContainer from './container/CartContainer'
+import MessageContainer from './container/MessageContainer'
 import Footer from './Components/Footer'
 class App extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class App extends React.Component {
             <div className= "hidden-sn animated deep-purple-skin">
                 <Header></Header>
                 <ProductsContainer></ProductsContainer>
-                <Message></Message>
+                <MessageContainer></MessageContainer>
                 <CartContainer></CartContainer>
                 <Footer></Footer>
             </div>  

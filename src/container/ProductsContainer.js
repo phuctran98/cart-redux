@@ -8,10 +8,10 @@ import * as actions from '../actions/index'
 
 class ProductsContainer extends React.Component {
     showProduct(products){
-        var {onAddToCart} = this.props
+        var {onAddToCart,changeMessage} = this.props
         var results = []
         results = products.map((product,index) =>{
-            return <Product product={product} key={index} onAddToCart = {onAddToCart}></Product>
+            return <Product product={product} key={index} onAddToCart = {onAddToCart} changeMessage={changeMessage}></Product>
         })
         return results
     }
@@ -33,6 +33,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     return{
         onAddToCart : (product) =>{
             dispatch(actions.addToCart(product,1))
+        },
+        changeMessage : (message) =>{
+            dispatch(actions.changeMessage(message))
         }
     }
 }

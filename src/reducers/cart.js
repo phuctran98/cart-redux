@@ -1,40 +1,13 @@
 import * as types from "../constants/ActionType";
-// var data = JSON.parse(localStorage.getItem('cart'))
-var initState = [
-    {
-        product : {
-            id:0,
-            name:"IPHONE8",
-            image :'https://dienthoaimoi.vn/images/news/2020/10/14/original/tiet-lo-moi-pin-iphone-12_1602643297.jpg',
-            description: "new module",
-            price: 100,
-            inventory : 10,
-            rating : 3
-        },
-        quantity : 4
-    },
-    {
-        
-        product : {
-            id:1,
-            name:"IPHONE8",
-            image :'https://dienthoaimoi.vn/images/news/2020/10/14/original/tiet-lo-moi-pin-iphone-12_1602643297.jpg',
-            description: "new module",
-            price: 500,
-            inventory : 10,
-            rating : 3
-        },
-        quantity : 2
-    }
-
-]
+var data = JSON.parse(localStorage.getItem('cart'))
+var initState = data ? data : []
 const cart = (state = initState, action) => {
     var index = -1
     var {product,quantity} = action
     switch(action.type){
         case types.ADD_TO_CART :{
             // console.log(action)
-            var index = findIndex(state,product)
+            index = findIndex(state,product)
             if(index !== -1){
                 console.log(index)
                 state[index].quantity += quantity

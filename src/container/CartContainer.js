@@ -17,7 +17,11 @@ class CartContainer extends React.Component {
         );
     }
     showCart = (cart) => {
-        var results = Message.MSG_CART_EMPTY
+        var results = <tr>
+            <td>
+            {Message.MSG_CART_EMPTY}
+            </td>
+        </tr>
         if(cart.length > 0){
             results =  cart.map((item,index)=>{
                 return <CartItem item ={item} key = {index}></CartItem>
