@@ -15,3 +15,16 @@ export const changeMessage = (message) =>{
         message
     }
 }
+export const deleteCartItem = (product) =>{
+    return {
+        type : types.DELETE_TO_CART,
+        product
+    }
+}
+export const updateQuantityCartItem = (product,quantity) =>{
+    return {
+        type : types.UPDATE_QUANTITY_CART_ITEM,
+        product,
+        quantity
+    }
+}

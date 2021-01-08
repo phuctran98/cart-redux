@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import  Cart from "../Components/Cart";
 import * as Message from "../constants/Message";
+import * as actions from "../actions/index";
 import CartItem from '../Components/CartItem';
 import CartResult from '../Components/CartResult';
 
@@ -17,6 +18,7 @@ class CartContainer extends React.Component {
         );
     }
     showCart = (cart) => {
+        const {onDeleteCartItem,onChangeMessage,onChangeQuantityCartItem} = this.props
         var results = <tr>
             <td>
             {Message.MSG_CART_EMPTY}
@@ -24,7 +26,14 @@ class CartContainer extends React.Component {
         </tr>
         if(cart.length > 0){
             results =  cart.map((item,index)=>{
-                return <CartItem item ={item} key = {index}></CartItem>
+                return <CartItem 
+                            item ={item} 
+                            key = {index}
+                            onDeleteCartItem = {onDeleteCartItem}
+                            onChangeMessage = {onChangeMessage}
+                            onChangeQuantityCartItem = {onChangeQuantityCartItem}
+                            >
+                        </CartItem>
             })
         }
         return results
@@ -40,6 +49,19 @@ class CartContainer extends React.Component {
 const mapStateToProps = (state) =>{
     return{
         cart : state.cart
+    }
+}
+const mapDispatchToProps = (dispatch, props) =>{
+    return{
+        onDeleteCartItem : (product) =>{
+            dispatch(actions.deleteCartItem(product))
+        },
+        onChangeMessage : (message) =>{
+            dispatch(actions.changeMessage(message))
+        },
+        onChangeQuantityCartItem : (product,quantity) =>{
+            dispatch(actions.updateQuantityCartItem(product,quantity))
+        }
     }
 }
 CartContainer.propTypes = {
@@ -58,4 +80,4 @@ CartContainer.propTypes = {
         })
     ).isRequired
 }
-export default connect(mapStateToProps,null)(CartContainer) ;
+export default connect(mapStateToProps,mapDispatchToProps)(CartContainer) ;

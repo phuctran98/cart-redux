@@ -16,6 +16,22 @@ const cart = (state = initState, action) => {
             else{
                 state.push({product,quantity})
             }
+            localStorage.setItem('cart', JSON.stringify(state))
+            return [...state]
+        }
+        case types.DELETE_TO_CART:{
+            index = findIndex(state,action.product)
+            state.splice(index,1)
+            // console.log(action.product)
+            localStorage.setItem('cart', JSON.stringify(state))
+            return [...state]
+        }
+        case types.UPDATE_QUANTITY_CART_ITEM:{
+            index = findIndex(state,action.product)
+            // console.log(index)
+            state[index].quantity = quantity
+            // console.log(action.product)
+            localStorage.setItem('cart', JSON.stringify(state))
             return [...state]
         }
         default: return [...state]
